@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 1px;
+	box-sizing: border-box;
+}
+.page {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.logo {
+	width: 25%;
+	height: auto;
+}
+.udacitylogo {
+	width: 100%;
+	max-width: 150px;
+	height: auto;
+}
+main {
+	margin: 0;
+	padding: 0;
+}
+hr {
+	padding: 0;
+}
+.title {
+	width: 75%;
+	height: auto;
+	text-align: right;
+	font-family: 'Advent Pro', sans-serif;
+	font-weight: 100;
+}
+.left-sidebar {
+	flex-direction: column;
+	align-content: center;
+}
+.colors {
+	width: 100%;
+	height: auto;
+}
+.swatches {
+	width: 100%;
+	height: auto;
+}
+p {
+	text-align: center;
+  color: #70757c;
+  font-weight: bold;
+}
+.main-pic {
+	width: 100%;
+	height: auto;
+}
+.html-pic {
+	width: 100%;
+	height: auto;
+}
+.featured {
+	font-family: 'Advent Pro', sans-serif;
+}
+.works {
+	display: flex;
+}
+.individual_work {
+	width: 100%;
+}
+.photos {
+	width: 100%;
+	height: auto;
+}
+.url {
+	display: block;
+	padding-bottom: 20px;
+}
+h3 {
+	padding-top: 10px;
+}
+@media screen and (max-width: 649px) {
+	.works {
+		flex-wrap: wrap;
+	}
+	.url {
+		font-size: 20px;
+	}
+}
+@media screen and (min-width: 650px) {
+	.main-pic {
+		width: 85%;
+		height: auto;
+	}
+}
+@media screen and (min-width: 1025px) {
+	.main-pic {
+		width: 88%;
+		height: auto;
+	}
+}
+@media screen and (min-width: 1075px) {
+		body {
+			width: 1075px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.url {
+			font-size: 20px;
+		}
+}
