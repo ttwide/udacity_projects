@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel=stylesheet href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">Catalog App
+    </div>
+    <div class="login">
+        {%if 'username' not in session %}
+      <form action="{{url_for('showLogin')}}">
+        <button>Login</a></button>
+      </form>
+    </div>
+          {% else %}
+    <form action="{{url_for('disconnect')}}">
+      <button>Logout </a></button>
+    </form>
+          {% endif %}
+    </div>
+    </div>
+  <div class="container2">
+    <div class="main">
+      <h2>{{category.name}}</h2>
+      <p>Name: {{singleItem.name}}</p>
+      <p>Description: {{singleItem.description}}</p>
+      <p>Price: {{singleItem.price}} </p>
+      <a href="{{url_for('editCatalogItem', item=singleItem.name)}}">Edit</a>
+      <a href="{{url_for('deleteCatalogItem', item=singleItem.name)}}">Delete</a><br>
+      <p><a href="{{url_for('singleCategoryItems', name=category.name)}}">Back</a></p>
+    </div>
+  </div>
+</body>
+</html>

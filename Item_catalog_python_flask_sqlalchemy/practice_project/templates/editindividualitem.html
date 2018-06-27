@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel=stylesheet href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">Catalog App
+    </div>
+    <div class="login">
+      {%if 'username' not in session %}
+      <form action="{{url_for('showLogin')}}">
+        <button>Login</a></button>
+      </form>
+    </div>
+        {% else %}
+    <form action="{{url_for('disconnect')}}">
+      <button>Logout </a></button>
+    </form>
+        {% endif %}
+    </div>
+  </div>
+  <div class="container2">
+    <div class="main">
+      <h1>Edit Item</h1>
+      <form action="" method='POST'>
+        <p>Title:</p><input type="text" size="30" name="name" placeholder="{{editedSportItem.name}}">
+        <p>Description:</p><input type='text' size='30' name='description' placeholder="{{editedSportItem.description}}">
+        <p>Price:</p><input type='text' size='30' name='price' placeholder="{{editedSportItem.price}}">
+        <p>Category:</p><select name="sportcategory_name">
+          <option value="Soccer">Soccer
+          </option>
+          <option value="Baseball">Baseball
+          </option>
+          <option value="Football">Football
+          </option>
+          <option value="Snowboarding">Snowboarding
+          </option>
+          <option value="Hockey">Hockey
+          </option>
+          <option value="Weight Training">Weight Training
+          </option>
+        <p><input type="submit" value="Edit">
+          <a href="{{url_for('showSingleItem', name=editedSportItem.sportcategory_name, item=editedSportItem.name)}}">Cancel</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
